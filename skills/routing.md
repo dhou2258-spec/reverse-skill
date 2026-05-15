@@ -76,7 +76,7 @@
 | jadx / apktool | `apk-reverse/` — decode.ps1 / manifest-summary.ps1 |
 | Frida | `reverse-engineering/tools-dynamic.md` |
 | GDB / pwndbg / rr | `reverse-engineering/tools.md` |
-| Ghidra (headless) | `reverse-engineering/tools.md` |
+| Ghidra (headless) | `reverse-engineering/tools.md` + Ghidra MCP（免费 IDA 替代，可通过 bootstrap 自动注册） |
 | angr / Qiling / Unicorn | `reverse-engineering/tools-dynamic.md` |
 | BinDiff / Diaphora | `reverse-engineering/tools-advanced.md` |
 | anything-analyzer MCP | 端口 23816 的 MCP 服务器（浏览器+HTTP 捕获+AI 分析） |

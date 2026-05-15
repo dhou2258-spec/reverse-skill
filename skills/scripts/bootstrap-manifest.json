@@ -127,6 +127,28 @@
       "canAutoInstall": true,
       "verifyCommand": "agent-browser",
       "setupScript": "%SKILL_ROOT%\\browser-automation\\scripts\\setup.ps1"
+    },
+    {
+      "name": "ghidra-mcp",
+      "bootstrapKind": "npm-mcp",
+      "npmPackage": "@mcp-security-hub/ghidra@latest",
+      "mcpNames": ["ghidra"],
+      "mcpCommand": "npx",
+      "mcpArgs": ["-y", "@mcp-security-hub/ghidra@latest"],
+      "mcpEnv": {},
+      "docsUrl": "https://github.com/FuzzingLabs/mcp-security-hub",
+      "canAutoInstall": true,
+      "verifyCommand": "npx"
+    },
+    {
+      "name": "seclists",
+      "bootstrapKind": "github-release-zip",
+      "repo": "danielmiessler/SecLists",
+      "assetRegex": "^SecLists-.*\\.zip$",
+      "installDir": "%USERPROFILE%\\Tools\\SecLists",
+      "docsUrl": "https://github.com/danielmiessler/SecLists",
+      "canAutoInstall": true,
+      "verifyCommand": ""
     }
   ]
 }
