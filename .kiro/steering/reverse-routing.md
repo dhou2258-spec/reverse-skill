@@ -74,6 +74,43 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "<本包根目录>/skills/sc
 15. 输出最终结果
 ```
 
+## 任务完成后的硬性 Checklist（不可跳过）
+
+当任务执行完毕（漏洞已验证/逆向已完成/flag 已拿到）后，AI **必须**逐项执行以下清单，不允许跳过任何一项：
+
+```text
+□ 1. 生成正式报告（docs-generator）
+     - 使用对应模板（逆向报告/渗透报告/CTF writeup/签名报告）
+     - 报告必须包含：目标概述、完整步骤、关键证据、复现命令
+     - 报告长度：至少 500 字，复杂任务至少 1000 字
+     - 输出到用户项目目录
+
+□ 2. 生成图表（diagram-generator）
+     - 至少包含 1 张流程图（攻击路径/分析流程/数据流）
+     - 用 Mermaid 代码块嵌入报告中
+     - 图表类型参考：
+       · 渗透测试 → 攻击路径图（flowchart）
+       · 逆向分析 → 函数调用关系图 或 数据流图
+       · JS 签名 → 请求链路时序图（sequenceDiagram）
+       · CTF → 解题思路流程图
+
+□ 3. 回写 field-journal（已脱敏）
+     - 按 _template.md 格式
+     - 必须包含：踩坑记录、可复用模式、工具链发现
+     - 脱敏检查：无真实域名/IP/Token
+
+□ 4. 询问社区贡献
+     - 向用户展示："是否将本次经验贡献到社区主仓库？数据已脱敏。"
+     - 等待用户回复
+
+□ 5. 更新索引
+     - 更新 field-journal/_index.md
+     - 检查是否需要更新 routing.md / bootstrap-manifest
+```
+
+如果 AI 在任务完成后没有执行以上清单，用户可以提醒："你忘了写报告和回写经验"，AI 必须立即补上。
+```
+
 ## Bootstrap 命令
 
 ```powershell

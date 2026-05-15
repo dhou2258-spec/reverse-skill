@@ -12,7 +12,7 @@
 <!-- 格式: - [YYYY-MM-DD] 项目简称 — 关键词: keyword1, keyword2, keyword3 -->
 
 ### 二进制分析
-<!-- 格式: - [YYYY-MM-DD] 项目简称 — 关键词: keyword1, keyword2, keyword3 -->
+- [2026-05-15] lumine v0.9.1 Go逆向 — 关键词: GoReSym, TLS分片, DPI绕过, capstone, PE逆向
 
 ### 渗透测试
 <!-- 格式: - [YYYY-MM-DD] 项目简称 — 关键词: keyword1, keyword2, keyword3 -->
@@ -42,7 +42,7 @@
 
 ## 累计统计
 
-- 总项目数: 0
+- 总项目数: 1
 - 新增模式数: 0
-- 工具链修复数: 0
-- 最近更新: —
+- 工具链修复数: 1 (Python3 路径问题)
+- 最近更新: 2026-05-15
