@@ -354,18 +354,22 @@ function Ensure-Capability {
 
     switch ($definition.bootstrapKind) {
         'github-release-zip' {
-            if ($Name -eq 'jadx') {
-                return Ensure-GitHubZipInstall -Definition $definition -TargetPath $definition.installDir -VerifyName 'jadx'
-            }
-            if ($Name -in @('r2', 'rabin2')) {
-                return Ensure-GitHubZipInstall -Definition $definition -TargetPath $definition.installDir -VerifyName $Name
-            }
+            # Generic handler for all github-release-zip capabilities
+            $verifyName = if ($definition.PSObject.Properties['verifyCommand'] -and -not [string]::IsNullOrWhiteSpace($definition.verifyCommand)) {
+                $definition.verifyCommand
+            } else { $Name }
+            return Ensure-GitHubZipInstall -Definition $definition -TargetPath $definition.installDir -VerifyName $verifyName
         }
         'github-release-jar-wrapper' {
             return Ensure-ApktoolInstall -Definition $definition
         }
         'pip-package' {
             Ensure-PipPackageInstall -Definition $definition
+            return $true
+        }
+        'winget-package' {
+            $wingetId = $definition.wingetId
+            Ensure-WingetPackage -Id $wingetId -Label $Name
             return $true
         }
         'npm-mcp' {
@@ -491,12 +495,6 @@ foreach ($name in $expandedCapabilities) {
         switch ($name) {
             'adb' {
                 Ensure-AndroidPlatformTools | Out-Null
-            }
-            'zipalign' {
-                throw 'MANUAL_INSTALL_REQUIRED: zipalign — Install Android Build-Tools via: sdkmanager "build-tools;35.0.0"'
-            }
-            'apksigner' {
-                throw 'MANUAL_INSTALL_REQUIRED: apksigner — Install Android Build-Tools via: sdkmanager "build-tools;35.0.0"'
             }
             default {
                 $ensureResult = Ensure-Capability -Name $name

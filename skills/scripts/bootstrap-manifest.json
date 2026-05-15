@@ -175,6 +175,14 @@
       "canAutoInstall": false,
       "verificationMode": "service-or-registration",
       "manualInstallHint": "在 BurpSuite 扩展市场搜索 MCP 插件安装，启动后监听 localhost:9876"
+    },
+    {
+      "name": "nmap",
+      "bootstrapKind": "winget-package",
+      "wingetId": "Insecure.Nmap",
+      "docsUrl": "https://nmap.org/",
+      "canAutoInstall": true,
+      "verifyCommand": "nmap"
     }
   ]
 }

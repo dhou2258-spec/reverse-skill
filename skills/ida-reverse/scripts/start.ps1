@@ -18,7 +18,24 @@ param(
 )
 
 if ([string]::IsNullOrWhiteSpace($IdaDir)) {
-    $IdaDir = if (-not [string]::IsNullOrWhiteSpace($env:IDADIR)) { $env:IDADIR } else { 'D:\APP\IDA' }
+    if (-not [string]::IsNullOrWhiteSpace($env:IDADIR)) {
+        $IdaDir = $env:IDADIR
+    } else {
+        # Search common IDA installation paths
+        $idaCandidates = @(
+            'D:\APP\IDA',
+            'C:\Program Files\IDA Pro',
+            'C:\IDA Pro',
+            (Join-Path $env:USERPROFILE 'Tools\IDA')
+        )
+        $foundIda = $idaCandidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
+        if ($foundIda) {
+            $IdaDir = $foundIda
+        } else {
+            Write-Output "ERR:IDADIR not set and IDA Pro not found. Set IDADIR environment variable."
+            exit 1
+        }
+    }
 }
 $env:IDADIR = $IdaDir
 

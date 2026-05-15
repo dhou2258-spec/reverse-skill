@@ -19,11 +19,27 @@ param(
     [int]$TimeoutSeconds = 120
 )
 
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+
 if (-not [string]::IsNullOrWhiteSpace($env:IDADIR)) {
     $env:IDADIR = $env:IDADIR
 }
 else {
-    $env:IDADIR = 'D:\APP\IDA'
+    # Fallback: check common IDA installation paths
+    $idaCandidates = @(
+        'D:\APP\IDA',
+        'C:\Program Files\IDA Pro',
+        'C:\IDA Pro',
+        (Join-Path $env:USERPROFILE 'Tools\IDA')
+    )
+    $foundIda = $idaCandidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
+    if ($foundIda) {
+        $env:IDADIR = $foundIda
+    } else {
+        Write-Error "ERR:IDADIR not set and IDA Pro not found at common paths. Set IDADIR environment variable to your IDA installation directory."
+        exit 1
+    }
 }
 $Port = 13337
 $TempDir = Join-Path $env:TEMP 'reverse-skill'

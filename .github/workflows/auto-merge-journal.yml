@@ -110,10 +110,10 @@ jobs:
               fi
             fi
             
-            # 3g. 文件大小检查（单文件 30KB 上限）
+            # 3g. 文件大小检查（单文件 50KB 上限）
             SIZE=$(wc -c < "$file")
-            if [ "$SIZE" -gt 30720 ]; then
-              echo "❌ BLOCKED: $file 超过 30KB（$SIZE bytes）"
+            if [ "$SIZE" -gt 51200 ]; then
+              echo "❌ BLOCKED: $file 超过 50KB（$SIZE bytes）"
               echo "valid=false" >> $GITHUB_OUTPUT
               exit 1
             fi

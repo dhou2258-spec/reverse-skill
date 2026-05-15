@@ -129,6 +129,14 @@ For README, API endpoint, and file organization templates, see [references/templ
 
 ---
 
+## 按需自举（On-Demand Bootstrap）
+
+本 skill 不依赖外部工具，纯文本生成。无需 bootstrap。
+
+如果需要渲染图表嵌入报告，会调用 `diagram-generator/` skill。
+
+---
+
 ## 路由上下文
 
 **上游入口**: 所有安全/逆向 skill 在任务完成后自动调用本 skill

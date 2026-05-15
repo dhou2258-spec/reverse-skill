@@ -1,6 +1,6 @@
 ﻿# 逆向工具索引
 
-- 扫描时间: 2026-05-15 18:35:26 +08:00
+- 扫描时间: 2026-05-15 20:27:21 +08:00
 - 路由入口: `SKILL.md` → `routing.md` → 对应子 skill
 - 说明: 本表由 `scripts/refresh-tool-index.ps1` 自动生成，优先用于 Claude 路由和工具路径确认。
 - 注意: 对于 jshookmcp 这类 MCP server，`yes` 只表示本机具备通过 node/npx 拉起它的条件，不表示它已经在 Claude MCP 配置里注册并启用。
@@ -29,6 +29,7 @@
 | agent-browser | browser-automation | 浏览器自动化（Playwright）：打开页面、点击、填表、爬取、截图 | yes | C:\Users\24781\AppData\Roaming\npm\agent-browser.ps1 | agent-browser 0.27.0 | Get-Command | browser-automation/SKILL.md |
 | analyzeHeadless | reverse-engineering | Ghidra 无头分析（免费 IDA 替代） | no | — | — | Missing | reverse-engineering/SKILL.md |
 | playwright | browser-automation | Playwright 浏览器引擎 | yes | C:\Users\24781\AppData\Local\Programs\Python\Python313\Scripts\playwright.exe | Version 1.53.0 | Get-Command | browser-automation/SKILL.md<br>browser-automation/scripts/setup.ps1 |
+| proxycat | pentest-tools | 代理池管理与轮换 | no | — | — | Missing | pentest-tools/SKILL.md |
 
 
 ---

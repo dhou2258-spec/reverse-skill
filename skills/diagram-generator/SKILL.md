@@ -140,3 +140,34 @@ Rendered file: [link] [only if generated]
 ```
 
 For English user requests, respond in English. For Chinese user requests, respond in Chinese unless they ask otherwise.
+
+---
+
+## 按需自举（On-Demand Bootstrap）
+
+### 自动化能力边界
+
+| 工具 | 可自动安装 | 安装方式 | 说明 |
+|------|-----------|---------|------|
+| Mermaid CLI (mmdc) | ✓ | npm install -g @mermaid-js/mermaid-cli | 渲染 Mermaid 为 PNG/SVG |
+| Graphviz (dot) | ✗ | 手动安装 | https://graphviz.org/download/ |
+| PlantUML | ✗ | 需要 Java + plantuml.jar | https://plantuml.com/download |
+| Python (render script) | ✓ | 已在 bootstrap 中 | `scripts/render_diagram.py` 依赖 |
+
+### 说明
+
+本 skill 主要输出文本格式的图表源码（Mermaid/DOT/PlantUML），不一定需要本地渲染工具。只有当用户明确要求生成 PNG/SVG/PDF 文件时才需要对应的渲染器。
+
+如果渲染器不可用，`scripts/render_diagram.py` 会输出安装提示而不是报错。
+
+---
+
+## 路由上下文
+
+**上游入口**: `skills/SKILL.md`（总控）、`routing.md`
+**触发条件**: 用户说"画图"、"流程图"、"架构图"、"攻击路径图"、"时序图"、"Mermaid"、"Graphviz"、"PlantUML"
+**下游出口**:
+- 生成的图表可嵌入 `docs-generator/` 的报告中
+- 攻击路径图可配合 `pentest-tools/` 的渗透报告
+
+**同级关联模块**: `docs-generator/`（报告中嵌入图表）

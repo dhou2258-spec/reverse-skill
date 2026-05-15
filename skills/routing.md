@@ -15,6 +15,10 @@
 | macOS / iOS | `reverse-engineering/platforms.md` — Mach-O/ObjC/Swift | — |
 | 游戏 (Unity/Unreal) | `game-security/` — 游戏引擎逆向、反作弊、IL2CPP/Mono | `ida-reverse/` 深度分析，`reverse-engineering/platforms.md` 通用方法 |
 | 内存转储 / PCAP | `reverse-engineering/platforms.md` | `reverse-engineering/patterns*.md` |
+| 恶意软件 / 病毒样本 | `reverse-engineering/` — YARA/沙箱/行为分析 | `ida-reverse/` 深度分析 |
+| 密码学 / 加解密算法 | `reverse-engineering/patterns*.md` — 密码学模式 | `js-reverse/`（如果是前端加密） |
+| 协议逆向 / 自定义协议 | `reverse-engineering/platforms.md` — 网络协议 | `js-reverse/`（如果是 WebSocket/HTTP） |
+| Go / Rust 二进制 | `reverse-engineering/languages-compiled.md` + `go-reverse.md` | `ida-reverse/` 或 `radare2/` |
 | **CTF 竞赛全栈** | `../CTF-Sandbox-Orchestrator/ctf-sandbox-orchestrator/SKILL.md` — 总控入口 | 按证据面路由到 40+ 子技能 |
 | Web 运行时 / API | `../CTF-Sandbox-Orchestrator/competition-web-runtime/SKILL.md` | — |
 | 云 / 容器 / K8s | `../CTF-Sandbox-Orchestrator/competition-agent-cloud/SKILL.md` | — |
@@ -71,6 +75,21 @@
 | "画图/流程图/架构图/攻击路径图" | `diagram-generator/SKILL.md` — 图表生成 |
 | "时序图/状态图/ER图/数据流图" | `diagram-generator/SKILL.md` — Mermaid/Graphviz/PlantUML |
 | "Mermaid/Graphviz/PlantUML" | `diagram-generator/SKILL.md` — 图表生成 |
+| "恶意软件/病毒分析/样本分析" | `reverse-engineering/SKILL.md` — 通用逆向 + YARA/沙箱 |
+| "Go 逆向/Rust 逆向/stripped" | `reverse-engineering/languages-compiled.md` + `go-reverse.md` |
+| "固件/IoT/binwalk/ARM" | `reverse-engineering/platforms-hardware.md` |
+| "密码学/加解密/AES/RSA" | `reverse-engineering/patterns*.md` — 密码学模式识别 |
+| "协议逆向/Protobuf/自定义协议" | `reverse-engineering/platforms.md` — 网络协议分析 |
+| "内存转储/dump 分析" | `reverse-engineering/platforms.md` |
+| "云安全/容器逃逸/K8s" | `../CTF-Sandbox-Orchestrator/competition-agent-cloud/SKILL.md` |
+| "Prompt 注入/AI 安全" | `../CTF-Sandbox-Orchestrator/competition-prompt-injection/SKILL.md` |
+| "内网渗透/横向移动" | `pentest-tools/SKILL.md` + `references/network-attack-defense.md` |
+| "权限提升/提权" | `pentest-tools/references/network-attack-defense.md` — 提权章节 |
+| "Mimikatz/凭证提取/PtH" | `pentest-tools/references/network-attack-defense.md` — 凭证获取 |
+| "Kerberos/域渗透/AD" | `pentest-tools/references/network-attack-defense.md` — Kerberos 攻击 |
+| "C2/远控/持久化" | `pentest-tools/references/network-attack-defense.md` — 持久化+C2 |
+| "蓝队/检测/防御/应急响应" | `pentest-tools/references/network-attack-defense.md` — 防御体系 |
+| "APK 安全测试/移动安全" | `apk-reverse/references/apk-security-checklist.md` — OWASP MASTG |
 
 ## 按工具链
 

@@ -121,21 +121,21 @@ if (-not (Test-Path -LiteralPath $ScriptPath)) {
     throw "Frida script not found: $ScriptPath"
 }
 
-$args = @($deviceFlag)
+$fridaArgs = @($deviceFlag)
 if (-not $Usb) {
-    $args += $RemoteHost
+    $fridaArgs += $RemoteHost
 }
 if ($Spawn) {
-    $args += '-f'
+    $fridaArgs += '-f'
 } else {
-    $args += '-n'
+    $fridaArgs += '-n'
 }
-$args += $target
-$args += '-l'
-$args += $ScriptPath
+$fridaArgs += $target
+$fridaArgs += '-l'
+$fridaArgs += $ScriptPath
 if (-not $Pause) {
-    $args += '--no-pause'
+    $fridaArgs += '--no-pause'
 }
 
-& $frida @args
+& $frida @fridaArgs
 exit $LASTEXITCODE

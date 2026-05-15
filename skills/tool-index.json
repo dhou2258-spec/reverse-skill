@@ -1,5 +1,5 @@
 ﻿{
-    "generated_at":  "2026-05-15 18:35:26 +08:00",
+    "generated_at":  "2026-05-15 20:27:21 +08:00",
     "routing_entry":  [
                           "SKILL.md",
                           "routing.md"
@@ -269,6 +269,18 @@
                       "script_refs":  [
                                           "browser-automation/SKILL.md",
                                           "browser-automation/scripts/setup.ps1"
+                                      ]
+                  },
+                  {
+                      "name":  "proxycat",
+                      "skill":  "pentest-tools",
+                      "purpose":  "代理池管理与轮换",
+                      "available":  false,
+                      "resolved_path":  "",
+                      "version":  "",
+                      "source":  "Missing",
+                      "script_refs":  [
+                                          "pentest-tools/SKILL.md"
                                       ]
                   }
               ],

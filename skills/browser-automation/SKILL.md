@@ -1,5 +1,5 @@
 ﻿---
-name: desktop-automation
+name: browser-automation
 description: |
   统一自动化入口。覆盖浏览器自动化（Playwright）和 Windows 桌面应用自动化（OpenReverse）。
   浏览器场景：打开网页、点击、填表、爬取、截图、自动化登录、渗透页面交互。

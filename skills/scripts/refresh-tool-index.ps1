@@ -42,6 +42,8 @@ $scriptRefs = @{
     'agent-browser' = @('browser-automation/SKILL.md')
     'playwright' = @('browser-automation/SKILL.md', 'browser-automation/scripts/setup.ps1')
     'analyzeHeadless' = @('reverse-engineering/SKILL.md')
+    'proxycat' = @('pentest-tools/SKILL.md')
+    'nmap' = @('pentest-tools/SKILL.md')
 }
 
 $reports = Get-ReverseToolReport
@@ -75,7 +77,7 @@ $markdownContent = ($markdownLines -join [Environment]::NewLine) + [Environment]
 $markdownContent | Set-Content -LiteralPath $OutputMarkdown -Encoding utf8
 
 # --- Capability status view ---
-$capabilityNames = @('jadx', 'apktool', 'frida', 'idalib-mcp', 'jshookmcp', 'anything-analyzer', 'idapro', 'r2', 'adb', 'agent-browser')
+$capabilityNames = @('jadx', 'apktool', 'frida', 'idalib-mcp', 'jshookmcp', 'anything-analyzer', 'idapro', 'r2', 'adb', 'agent-browser', 'ghidra-mcp', 'seclists', 'proxycat', 'burpsuite-mcp', 'nmap')
 $capabilityRows = @()
 foreach ($capName in $capabilityNames) {
     $state = Get-ReverseCapabilityState -Name $capName

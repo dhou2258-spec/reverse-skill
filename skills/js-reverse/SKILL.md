@@ -152,7 +152,7 @@ description: 在使用 js-reverse-mcp 做前端 JavaScript 逆向时使用，适
 
 ## 路由上下文
 
-**上游入口**: `逆向skill/SKILL.md`（总控）
+**上游入口**: `skills/SKILL.md`（总控）、`routing.md`
 **上游备选**:
 - anything-analyzer MCP（端口 23816）的浏览器工具可作为替代或补充
 - jshookmcp 可作为更强的浏览器/CDP/Hook/Network/SourceMap/AST 执行面

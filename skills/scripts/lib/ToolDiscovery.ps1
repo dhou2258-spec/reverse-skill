@@ -232,6 +232,25 @@ function Get-ReverseToolCatalog {
                 [pscustomobject]@{ Type = 'path'; Value = (Join-Path $env:APPDATA 'npm\playwright.ps1') }
             )
         }
+        [pscustomobject]@{
+            Name = 'proxycat'
+            Skill = 'pentest-tools'
+            Purpose = '代理池管理与轮换'
+            VersionArgs = @('--version')
+            Fallbacks = @(
+                [pscustomobject]@{ Type = 'command'; Value = 'proxycat' }
+            )
+        }
+        [pscustomobject]@{
+            Name = 'nmap'
+            Skill = 'pentest-tools'
+            Purpose = '端口扫描与服务识别'
+            VersionArgs = @('--version')
+            Fallbacks = @(
+                [pscustomobject]@{ Type = 'command'; Value = 'nmap' },
+                [pscustomobject]@{ Type = 'path'; Value = 'C:\Program Files (x86)\Nmap\nmap.exe' }
+            )
+        }
     )
 }
 

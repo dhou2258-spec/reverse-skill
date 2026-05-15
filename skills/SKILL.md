@@ -59,13 +59,13 @@
 powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-root>\scripts\bootstrap-reverse.ps1" -Capability @('工具名') -StartServices
 ```
 
-支持的能力：jadx、apktool、frida、idalib-mcp、jshookmcp、anything-analyzer、idapro、r2、rabin2、adb
+支持的能力：jadx、apktool、frida、idalib-mcp、jshookmcp、anything-analyzer、idapro、r2、rabin2、adb、agent-browser、ghidra-mcp、nmap、proxycat
 
 自举完成后会自动刷新 `tool-index`。
 
 ## 自动进化
 
-每次完成逆向/渗透任务后，必须回写经验到 `field-journal/` 目录。详见 `Readme.md` 第 14 节。
+每次完成逆向/渗透任务后，必须回写经验到 `field-journal/` 目录。详见 `RULES.md` 的"任务完成后的硬性 Checklist"。
 
 - 模板：`field-journal/_template.md`
 - 索引：`field-journal/_index.md`
