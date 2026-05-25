@@ -105,6 +105,14 @@
 - 供应链安全、SBOM、软件组成分析、SCA、依赖扫描、依赖漏洞、供应链攻击
 - CI/CD 安全、管道审计、构建完整性、容器安全、镜像扫描、容器签名
 - Trivy、Syft、Cosign、Gitleaks、OSV-Scanner、Dependency-Track、SLSA
+- iOS 逆向、IPA 分析、Mach-O、Objective-C、Swift 逆向、越狱检测、class-dump、jtool2、Hopper
+- Frida、Objection、动态插桩、SSL Pinning 绕过、Root 检测绕过、Frida Gadget、免 Root 注入
+- 移动安全、MSTG、OWASP Mobile、MobSF、移动渗透测试、Android 安全、iOS 安全
+- YARA、Sigma、威胁检测规则、行为检测、IOC 提取、威胁情报
+- 恶意软件分析、病毒分析、样本分析、沙箱、CAPE、Joe Sandbox、Azul
+- 反分析检测、反沙箱、反调试、虚拟机检测、反 VM、PEB 检测
+- pe-sieve、FLOSS、Detect It Easy、CAPE Sandbox
+- AI 反编译、LLM 逆向、神经反编译、LLM4Decompile、Glaurung、AI 辅助逆向
 
 ---
 
@@ -357,7 +365,7 @@
 powershell -NoProfile -ExecutionPolicy Bypass -File "<本包根目录>/skills/scripts/bootstrap-reverse.ps1" -Capability @('工具名') -StartServices
 ```
 
-支持的能力名：jadx、apktool、frida、idalib-mcp、jshookmcp、anything-analyzer、idapro、r2、rabin2、adb、agent-browser、ghidra-mcp、nmap、proxycat、burpsuite-mcp、binwalk、unblob、emba、firmadyne、qemu-static、pwntools、ropgadget、one_gadget、bindiff、ghidriff、syswhispers3、pe-sieve、garak、pyrit、osv-scanner、trivy、syft、gitleaks
+支持的能力名：jadx、apktool、frida、idalib-mcp、jshookmcp、anything-analyzer、idapro、r2、rabin2、adb、agent-browser、ghidra-mcp、nmap、proxycat、burpsuite-mcp、binwalk、unblob、emba、firmadyne、qemu-static、pwntools、ropgadget、one_gadget、bindiff、ghidriff、syswhispers3、pe-sieve、garak、pyrit、osv-scanner、trivy、syft、gitleaks、objection、yara、floss
 
 ## 刷新工具索引
 

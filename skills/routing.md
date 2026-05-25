@@ -6,7 +6,8 @@
 
 | 目标类型 | 推荐入口 | 备选方案 |
 |---------|---------|---------|
-| APK / Android 应用 | `apk-reverse/` — jadx 反编译 + apktool 解包 | 如核心在 .so → `ida-reverse/` 或 `radare2/` |
+| APK / Android 应用 | `mobile-reverse/SKILL.md` — Frida/Objection/MobSF 全平台移动逆向 | `apk-reverse/` — 仅 Android 静态分析、jadx 反编译 |
+| iOS / IPA 应用 | `mobile-reverse/SKILL.md` — iOS 逆向 + Frida/Objection | `mobile-reverse/references/ios-reverse-guide.md` — iOS 专项 |
 | 二进制 exe/dll/so/elf | `ida-reverse/` — IDA Pro 反编译 | `radare2/` — CLI 分析，或 `reverse-engineering/tools.md` — GDB/Unicorn |
 | JavaScript / Web 前端 | `js-reverse/` — 5 阶段工作流 | anything-analyzer MCP 的浏览器工具，或 jshookmcp 的浏览器/CDP/Hook 能力 |
 | HTTP 抓包 / 浏览器采样 / 请求重放 | anything-analyzer MCP（23816） | `js-reverse/`、jshookmcp 或 `competition-web-runtime/` |
@@ -14,7 +15,6 @@
 | WASM / Python 字节码 / .NET | `reverse-engineering/languages.md` | 按具体语言查对应章节 |
 | macOS / iOS | `reverse-engineering/platforms.md` — Mach-O/ObjC/Swift | — |
 | 内存转储 / PCAP | `reverse-engineering/platforms.md` | `reverse-engineering/patterns*.md` |
-| 恶意软件 / 病毒样本 | `reverse-engineering/` — YARA/沙箱/行为分析 | `ida-reverse/` 深度分析 |
 | 密码学 / 加解密算法 | `reverse-engineering/patterns*.md` — 密码学模式 | `js-reverse/`（如果是前端加密） |
 | 协议逆向 / 自定义协议 | `reverse-engineering/platforms.md` — 网络协议 | `js-reverse/`（如果是 WebSocket/HTTP） |
 | Go / Rust 二进制 | `reverse-engineering/languages-compiled.md` + `go-reverse.md` | `ida-reverse/` 或 `radare2/` |
@@ -29,6 +29,7 @@
 | **LLM 应用 / AI Agent** | `llm-security/SKILL.md` — OWASP LLM + ASI Top 10 | `../CTF-Sandbox-Orchestrator/competition-prompt-injection/SKILL.md` — CTF 场景 |
 | **REST / GraphQL / WebSocket API** | `api-security/SKILL.md` — 10 阶段方法论 | `pentest-tools/SKILL.md` — 基础 Web 渗透 |
 | **软件供应链 / SBOM / SCA** | `supply-chain-security/SKILL.md` — 六层治理框架 | `pentest-tools/SKILL.md` — 依赖扫描工具 |
+| **恶意软件 / 病毒样本** | `malware-analysis/SKILL.md` — 六阶段分析 + YARA/Sigma | `reverse-engineering/SKILL.md` — 仅通用逆向 / `ida-reverse/` 深度分析 |
 
 ## 按用户意图
 
@@ -89,7 +90,7 @@
 | "画图/流程图/架构图/攻击路径图" | `diagram-generator/SKILL.md` — 图表生成 |
 | "时序图/状态图/ER图/数据流图" | `diagram-generator/SKILL.md` — Mermaid/Graphviz/PlantUML |
 | "Mermaid/Graphviz/PlantUML" | `diagram-generator/SKILL.md` — 图表生成 |
-| "恶意软件/病毒分析/样本分析" | `reverse-engineering/SKILL.md` — 通用逆向 + YARA/沙箱 |
+| "恶意软件/病毒分析/样本分析" | `malware-analysis/SKILL.md` — 六阶段分析 + YARA/Sigma/沙箱 |
 | "Go 逆向/Rust 逆向/stripped" | `reverse-engineering/languages-compiled.md` + `go-reverse.md` |
 | "固件/IoT/binwalk/ARM" | `firmware-pentest/SKILL.md` — 固件全链路分析（与按目标类型表一致） |
 | "密码学/加解密/AES/RSA" | `reverse-engineering/patterns*.md` — 密码学模式识别 |
@@ -156,8 +157,15 @@
 | "CI/CD 安全/管道审计/构建完整性" | `supply-chain-security/references/cicd-pipeline-security.md` — 管道安全 |
 | "容器安全/镜像扫描/Trivy/Cosign" | `supply-chain-security/SKILL.md` — 容器安全章节 |
 | "gitleaks/密钥扫描/凭证泄漏" | `supply-chain-security/SKILL.md` — CI/CD 管道安全 |
-
-## 按工具链
+| "iOS 逆向/IPA/Objective-C/Swift/Mach-O" | `mobile-reverse/SKILL.md` — iOS 逆向 + Frida/Objection |
+| "Frida/Objection/动态插桩/SSL Unpinning" | `mobile-reverse/references/frida-objection-deep.md` — Frida 深度用法 |
+| "Root 检测绕过/越狱检测绕过/反调试移动端" | `mobile-reverse/references/anti-detection-bypass.md` — 多层绕过 |
+| "移动安全测试/MSTG/OWASP Mobile" | `mobile-reverse/SKILL.md` — OWASP MASTG 方法论 |
+| "YARA 规则/Sigma 规则/行为检测规则" | `malware-analysis/references/yara-sigma-rules.md` — 规则编写方法论 |
+| "沙箱分析/CAPE/Joe Sandbox/恶意软件沙箱" | `malware-analysis/references/sandbox-orchestration.md` — 沙箱编排 |
+| "反分析/反沙箱/反调试/虚拟机检测" | `malware-analysis/references/anti-analysis-techniques.md` — 94 种技术 |
+| "IOC 提取/威胁情报/恶意软件分析" | `malware-analysis/SKILL.md` — 六阶段分析流程 |
+| "AI 反编译/LLM 逆向/神经反编译" | `reverse-engineering/references/ai-assisted-re.md` — AI 辅助逆向 |
 
 | 工具 | 相关模块 |
 |------|---------|
@@ -218,6 +226,14 @@
 | OWASP Dependency-Track | `supply-chain-security/` — 企业级持续 SCA 监控 |
 | Gitleaks / truffleHog | `supply-chain-security/` — 密钥/凭证扫描 |
 | Cosign / SLSA | `supply-chain-security/` — 构建签名与溯源 |
+| Frida / Objection | `mobile-reverse/` — 动态插桩 + Frida Gadget 注入 |
+| JADX / apktool / MobSF | `mobile-reverse/` — Android 静态分析 |
+| class-dump / jtool2 / Hopper | `mobile-reverse/` — iOS 静态分析 |
+| CAPE Sandbox / ASD Azul | `malware-analysis/` — 沙箱自动化编排 |
+| YARA / FLOSS | `malware-analysis/` — 模式匹配 + 字符串去混淆 |
+| Sigma / Sigma CLI | `malware-analysis/` — SIEM 行为检测规则 |
+| pe-sieve / Detect It Easy | `malware-analysis/` — 进程扫描 + 壳检测 |
+| LLM4Decompile / Glaurung | `reverse-engineering/` — AI 辅助反编译 |
 
 需要确认本机工具是否可用、路径在哪里、哪个脚本会调用它时，统一查看 `tool-index.md`，不要临时猜路径。
 
