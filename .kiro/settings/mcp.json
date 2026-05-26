@@ -1,4 +1,4 @@
-{
+﻿{
   "mcpServers": {
     "idapro": {
       "url": "http://127.0.0.1:13337/mcp"
@@ -18,7 +18,7 @@
     },
     "burpsuite": {
       "command": "node",
-      "args": ["&lt;SKILL_ROOT&gt;/burp-mcp-full/mcp-bridge.js"]
+      "args": ["<SKILL_ROOT>/burp-mcp-full/mcp-bridge.js"]
     }
   }
 }

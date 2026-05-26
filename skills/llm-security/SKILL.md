@@ -115,3 +115,4 @@ LLM 输出可能被下游系统直接消费：
 - `references/owasp-llm-top10.md` — OWASP LLM + ASI Top 10 完整对照
 - `references/prompt-injection-methodology.md` — Prompt 注入方法论
 - `references/agent-security-testing.md` — Agent 安全测试框架
+- `references/agent-obedience-engineering.md` — Agent 服从性工程：让 AI 读完工作流后真正干活（8 大技术 + 借口反驳表 + 强制执行模板）
