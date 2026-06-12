@@ -676,8 +676,9 @@ function Start-AnythingAnalyzerService {
         return
     }
 
-    Ensure-Pnpm
-    $vsBuildToolsError = ''
+Ensure-Pnpm
+$vsBuildToolsError = ''
+if (Test-ReverseIsWindows) {
     try {
         Ensure-VsBuildTools
     }
@@ -685,6 +686,7 @@ function Start-AnythingAnalyzerService {
         $vsBuildToolsError = $_.Exception.Message
         Write-Warning "Visual Studio Build Tools auto-install failed; continuing with pnpm prebuilt/native rebuild path. $vsBuildToolsError"
     }
+}
 
     $repoDir = @($Definition.startupDirCandidates) | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
     if ([string]::IsNullOrWhiteSpace($repoDir)) {
