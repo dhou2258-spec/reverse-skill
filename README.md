@@ -44,6 +44,8 @@
 
 > **如果你是 AI Agent，直接跳转到 [README_AI.md](README_AI.md)，严格按照内容要求执行。**
 
+> **初次下载只需让Ai阅读[README_AI.md](README_AI.md)即可，无需其他操作。**
+
 当 AI Agent（Claude Code、Codex CLI、Cursor 等）遇到 APK、二进制、前端 JS 加密、CTF 或渗透测试任务时，这套系统能让它先路由到正确的方法论，再调用本机工具执行，而不是盲目猜命令。
 
 ```
